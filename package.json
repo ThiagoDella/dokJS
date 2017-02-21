@@ -1,0 +1,30 @@
+{
+  "name": "dokjs",
+  "version": "1.0.0",
+  "description": "A documentation generator for nodeJS",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThiagoDella/dokJS.git"
+  },
+  "keywords": [
+    "documentation",
+    "node",
+    "nodeJS",
+    "generator",
+    "script",
+    "javascript"
+  ],
+  "author": "Thiago Della Libera Moreira & Joao Pedro Portela Gomez Vaz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ThiagoDella/dokJS/issues"
+  },
+  "homepage": "https://github.com/ThiagoDella/dokJS#readme",
+  "dependencies": {
+    "yargs": "^6.6.0"
+  }
+}
