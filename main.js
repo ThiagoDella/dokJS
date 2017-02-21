@@ -16,4 +16,6 @@ const argv = require('yargs')
 const path = argv.path !== undefined ? (argv.path.length > 0 ? argv.path : __dirname) : __dirname;
 const verbose = argv.verbose;
 
-buildTree(path,verbose);
+buildTree(path,verbose).then((tree) => {
+  console.dir(tree);
+}, (err) => console.log(err));
