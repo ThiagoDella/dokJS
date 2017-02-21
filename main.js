@@ -1,3 +1,4 @@
+const buildTree = require('./scripts/buildTree.js');
 const argv = require('yargs')
               .option('path', {
                 alias : 'p',
@@ -15,6 +16,4 @@ const argv = require('yargs')
 const path = argv.path !== undefined ? (argv.path.length > 0 ? argv.path : __dirname) : __dirname;
 const verbose = argv.verbose;
 
-if (verbose) {
-  console.log("Using path as: " + path);
-}
+buildTree(path,verbose);
