@@ -1,3 +1,4 @@
+'use strict'
 const fs = require('fs');
 const mapFunctions = require('./mapFunctions');
 module.exports = function(path,verbose) {
@@ -12,13 +13,6 @@ module.exports = function(path,verbose) {
     function  createTree(path){
       var regexp = '/*\.js$',
       dir = [];
-      // if(verbose){
-      //   tree = {
-      //     thisLevelFolders : [],
-      //     thisLevelFiles : [],
-      //     deeperBranch : []
-      //   };
-      // }
 
       dir = fs.readdirSync(path);
       dir.map(file => {
@@ -26,11 +20,9 @@ module.exports = function(path,verbose) {
           let stats = fs.statSync(path + '/' + file);
 
           if(stats.isFile() && file.match(regexp) !== null){
-              // tree.thisLevelFiles.push(file.match(regexp).input);
               mapFunctions(path,file,verbose);
           }
           if(stats.isDirectory()){
-            // tree.thisLevelFolders.push(file);
             createTree(path + '\\' + file);
           }
         }

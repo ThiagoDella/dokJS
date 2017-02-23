@@ -1,3 +1,4 @@
+'use strict'
 const buildTree = require('./scripts/buildTree.js');
 const argv = require('yargs')
               .option('path', {
@@ -17,5 +18,5 @@ const path = argv.path !== undefined ? (argv.path.length > 0 ? argv.path : __dir
 const verbose = argv.verbose;
 
 buildTree(path,verbose).then((tree) => {
-  console.dir(tree);
+  // console.dir(tree);
 }, (err) => console.log(err));
