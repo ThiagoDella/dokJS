@@ -20,7 +20,7 @@ module.exports = function(path,verbose) {
           let stats = fs.statSync(path + '/' + file);
 
           if(stats.isFile() && file.match(regexp) !== null){
-              mapFunctions(path,file,verbose);
+              mapFunctions(path,file,verbose).then((data) => console.log(data), (err) => console.log(err));
           }
           if(stats.isDirectory()){
             createTree(path + '\\' + file);
